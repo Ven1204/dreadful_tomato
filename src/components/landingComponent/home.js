@@ -14,9 +14,11 @@ const Home = () => {
       <div className='img-container'>
         <div className='movie-container'>
           <img src={movies} alt="movie" />
+          <h1>Movies</h1>
         </div>
         <div className='series-container'>
           <img src={series} alt="tv series" />
+          <h1>Series</h1>
         </div>
       </div>
       <div>
