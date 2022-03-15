@@ -1,0 +1,39 @@
+.container-header{
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.logo{
+  background-image: '../images/logo.png';
+}
+
+.container-login{
+cursor: pointer;
+font-size: 16px;
+}
+
+.container-log-btn{
+  display: inline-flex;
+}
+
+.container-btn {
+  text-align: center;
+  margin: 16px;
+}
+.btn-freeTrial{
+  padding: 8px 20px;
+  color: white;
+  font-weight: 400;
+  background-color: rgba(243, 60, 60, 0.986);
+  border-radius: 20px;
+  border: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  height: 35px;
+}
+
+.btn-freeTrial :hover{
+    background-color: red;
+    color: rgb(226, 226, 226);
+  }
