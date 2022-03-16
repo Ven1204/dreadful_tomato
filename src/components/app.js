@@ -5,7 +5,13 @@ import MoviePage from './moviesComponent/movie';
 import SeriesPage from './tvSeriesComponent/series';
 import PageNotFound from './pageNotFoundComponent/pageNotFound';
 
+
 const App = () => {
+
+  // const data = fetch('https://jsonplaceholder.typicode.com/')
+  // .then(response => response.json())
+  // .then (json => console.log(json))
+
   return(
     <Router>
       <Routes>

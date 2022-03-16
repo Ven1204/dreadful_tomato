@@ -1,6 +1,21 @@
 .movie-cards-container{
   background-color: white;
   height: 100vh;
-  width: 90%;
-  margin-left: 5%;
+  width: 87%;
+  margin-left: 6%;
+}
+
+.movie-card{
+  background-color: blue;
+  height: 50vh;
+  width: 40vh;
+  position: relative;
+  .movie-card-image{
+    height: 100%;
+  }
+  .movie-card-title{
+    position: absolute;
+    color: red;
+    top: 280px;
+  }
 }
