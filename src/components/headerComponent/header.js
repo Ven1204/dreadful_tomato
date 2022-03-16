@@ -11,7 +11,10 @@ const Header = () => {
       </div>
       <div className='container-log-btn'>
         <div className='container-login'>
-          <h2>| Login <img src={login} alt="login icon" /> |</h2>
+          |
+          <h2> Login </h2>
+          <img src={login} alt="login icon" />
+          |
         </div>
         <div className='container-btn'>
            <button className='btn-freeTrial'>Start your free trial</button>
