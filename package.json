@@ -3,6 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
+    "@mui/icons-material": "^5.5.1",
+    "@mui/material": "^5.5.1",
+    "@mui/styled-engine-sc": "^5.4.2",
+    "@progress/kendo-licensing": "^1.2.2",
+    "@progress/kendo-react-dateinputs": "^5.1.0",
+    "@progress/kendo-react-intl": "^5.1.0",
+    "@progress/kendo-theme-default": "^5.2.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -15,7 +24,8 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^6.2.2",
-    "react-scripts": "^5.0.0"
+    "react-scripts": "^5.0.0",
+    "styled-components": "^5.3.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -47,5 +57,6 @@
     "file-loader": "^6.2.0",
     "sass": "^1.49.9",
     "webpack": "^5.70.0"
-  }
+  },
+  "proxy": "https://gitlab.com/-/snippets/2041384/raw/master/data.json"
 }

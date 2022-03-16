@@ -20,24 +20,7 @@
   }
 }
 
-
-.date-container{
-  width: 20%;
-}
-.date-search-container{
-  background-color: red;
+.search-bar-container{
+  background: red;
   height: 8vh;
-  display: inline-flex;
-  width: 100%;
-  justify-content: space-between;
-  position: relative;
-  line-height: 8vh;
-
-}
-.date-container{
-  padding-right: 94px;
-}
-
-.search-bar{
-  padding-left: 82px;
 }

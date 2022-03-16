@@ -1,24 +1,29 @@
 import React, { useState, useEffect } from 'react';
-import SearchBar from '../headerComponent/searchbar';
+import HeaderSearch from '../headerComponent/headerSearch';
 import './movie.scss';
 import Footer from '../footerComponent/footer';
-import axios from 'axios';
+import { DatePicker } from '@progress/kendo-react-dateinputs';
+import '@progress/kendo-theme-default/dist/all.css';
+import SearchBar from '../searchBarComponent/searchBar';
+
 
 const MoviePage = () => {
-  const [data, setData] = useState([]);
-
-  const getData = axios.get(`https://gitlab.com/-/snippets/2041384/raw/master/data.json`)
-
-    .then((res) => console.log(res))
-
-
-
+ const [startDate, setStartDate] = useState(new Date());
 
   return(
     <div>
       <div className='moviePage-container'>
         <div>
-        <SearchBar />
+        <HeaderSearch />
+        </div>
+
+        <div className='date-search-container'>
+          <div className='search-bar'>
+            <SearchBar placeholder={"Name"}/>
+          </div>
+          <div className='date-container'>
+            <DatePicker />
+          </div>
         </div>
 
         <div className='movie-cards-container'>
