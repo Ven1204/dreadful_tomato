@@ -1,33 +1,31 @@
 import React, { useState, useEffect } from 'react';
-import SearchBar from '../headerComponent/headerSearch';
+import HeaderSearch from '../headerComponent/headerSearch';
 import './series.scss';
 import Footer from '../footerComponent/footer';
-import axios from 'axios';
 import { DatePicker } from '@progress/kendo-react-dateinputs';
+import '@progress/kendo-theme-default/dist/all.css';
+import SearchBar from '../searchBarComponent/searchBar';
+
 
 const SeriesPage = () => {
-  const [data, setData] = useState([]);
-
-	const getData = async () => {
-		axios.get(`data.json`)
-    .then((res) => {
-			var data = [];
-			data = res.data;
-    setData(data)
-		});
-    console.log(data)
-  }
-
+ const [startDate, setStartDate] = useState(new Date());
 
   return(
     <div>
       <div className='seriesPage-container'>
         <div>
-        <SearchBar />
+        <HeaderSearch />
         </div>
-        <div className='search-bar-container'>
-          this will  be hidden
+
+        <div className='date-search-container'>
+          <div className='search-bar'>
+            <SearchBar placeholder={"Name"}/>
+          </div>
+          <div className='date-container'>
+            <DatePicker />
+          </div>
         </div>
+
         <div className='series-cards-container'>
           <div className='series-card'>
             <div className='series-card-image'>
