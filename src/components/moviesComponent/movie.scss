@@ -20,15 +20,21 @@
 }
 
 .movie-card-container{
-  background-color: white;
+  cursor: pointer;
+  grid-template-columns: repeat(auto-fill, minmax(220px));
+  display: flex;
+  flex-flow: wrap;
+
+
+
 }
 
 .description-card{
-  width: 20%;
-  background-color: red;
+  background-color: rgb(3, 3, 3);
   text-align: center;
   position: relative;
-  opacity: 0.3;
+  opacity: 0.7;
+  top: 135px;
 }
 
 .movie-image-card{
@@ -36,11 +42,19 @@
   height: 40%;
   position: absolute;
   img{
-    height: 70vh;
+    height: 72vh;
   }
 }
 
 .movie-card{
 margin: 2px;
-height: 420;
+height: 420px;
+width: 300px;
+
+}
+
+.container{
+
+  width: 92%;
+  margin-left: 4%;
 }

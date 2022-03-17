@@ -49,38 +49,41 @@ const MoviePage = () => {
 
   return(
     <div>
-    <div>
       <div>
-        <HeaderSearch />
-        </div>
+        <div>
+          <HeaderSearch />
+          </div>
 
-        <div className='date-search-container'>
-          <div className='search-bar'>
-            <SearchBar placeholder={"Name"}/>
-          </div>
-          <div className='date-container'>
-            <DatePicker />
-          </div>
+          <div className='date-search-container'>
+            <div className='search-bar'>
+              <SearchBar placeholder={"Name"}/>
+            </div>
+            <div className='date-container'>
+              <DatePicker />
+            </div>
+        </div>
       </div>
-    </div>
-    <div className='movie-card-container' >
 
-
-      {movieData.map(movie =>
-        <div className='movie-card'>
-            <div className='movie-image-card' >
-              <img src={movie.images.PosterArt.url} alt="poster"/>
+      <div className='container'>
+        <div className='movie-card-container' >
+          {movieData.map(movie =>
+            <div className='movie-card'>
+                <div className='movie-image-card' >
+                  <img src={movie.images.PosterArt.url} alt="poster"/>
+                </div>
+                <div className='description-card'>
+                  <div className='card-info'>
+                    <h1 >{movie.title}</h1>
+                    <h2>{movie.releaseYear}</h2>
+                    <p>{movie.description}</p>
+                  </div>
+                </div>
             </div>
-            <div className='description-card'>
-              <div className='card-info'>
-                <h1 >{movie.title}</h1>
-                <h2>{movie.releaseYear}</h2>
-                <p>{movie.description}</p>
-              </div>
-            </div>
+          )}
         </div>
-      )}
-    </div>
+      </div>
+
+
     </div>
   )
 }
