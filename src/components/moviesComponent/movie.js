@@ -10,18 +10,18 @@ import axios from 'axios';
 
 const MoviePage = () => {
   const [movieData, setMovieData] = useState([]);
-  const [movie, setMovie] = useState([]);
+  // const [movie, setMovie] = useState([]);
 
-  const initialMovie = () => {
-    var movie = movieData.map((movie) =>{
-      if(movie.programType === "movie"){
-        console.log(movie)
-        setMovie(movie.title)
-        // movie.title
-        // movie.description
-        // movie.images.PosterArt.url
-        }
-      })}
+  // const initialMovie = () => {
+  //   var movie = movieData.map((movie) =>{
+  //     if(movie.programType === "movie"){
+  //       console.log(movie)
+  //       setMovie(movie.title)
+  //       // movie.title
+  //       // movie.description
+  //       // movie.images.PosterArt.url
+  //       }
+  //     })}
 
 
 
@@ -30,7 +30,10 @@ const MoviePage = () => {
     const getApi = async () => {
       try {
         const response = await api.get('/entries');
-        setMovieData(response.data);
+        const isMovie = response.data
+        setMovieData(isMovie);
+
+        // console.log(isMovie)
       } catch (err){
         if(err.response){
           console.log(err.response.data);
@@ -41,7 +44,7 @@ const MoviePage = () => {
         }
       }
     }
-    initialMovie();
+    // initialMovie();
     getApi();
   }, [])
 
@@ -67,9 +70,9 @@ const MoviePage = () => {
       <div className='container'>
         <div className='movie-card-container' >
           {movieData.map(movie =>
-            <div className='movie-card'>
+            <div className='movie-card'key={movie.title}>
                 <div className='movie-image-card' >
-                  <img src={movie.images.PosterArt.url} alt="poster"/>
+                  <img src={movie.images.PosterArt.url } alt="poster"/>
                 </div>
                 <div className='description-card'>
                   <div className='card-info'>
