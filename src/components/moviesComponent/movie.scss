@@ -13,6 +13,8 @@
 }
 .date-container{
   padding-right: 94px;
+  left: 155vh;
+  position: absolute;
 }
 
 .search-bar{
@@ -30,31 +32,80 @@
 }
 
 .description-card{
-  background-color: rgb(3, 3, 3);
+
   text-align: center;
   position: relative;
-  opacity: 0.7;
+
   top: 135px;
+  width: 37vh;
+  height: 31vh;
+
 }
 
 .movie-image-card{
-  width: 20%;
-  height: 40%;
+  width: 41vh;
+  height: 55vh;
   position: absolute;
   img{
-    height: 72vh;
+    height: 55.5vh;
   }
 }
 
 .movie-card{
 margin: 2px;
-height: 420px;
-width: 300px;
-
+height: 54vh;
+width: 36vh;
+}
+.movie-card:hover{
+  .card-info{
+    display: block;
+  }
+  .initial-title{
+    display: none;
+  }
 }
 
 .container{
-
   width: 92%;
-  margin-left: 4%;
+}
+
+.card-info{
+  height: 32.2vh;
+  width: 37vh;
+  font: message-box;
+  display: none;
+  background-color: #333;
+  opacity: 0.7;
+
+  h1{
+    font-size: 16px;
+    padding-top: 4px;
+    opacity: 1;
+    padding: 8px;
+  }
+  h2{
+    font-size: 12px;
+    opacity: 1;
+  }
+  p{
+    font-size: 12px;
+    padding: 0px 12px;
+    opacity: 1;
+  }
+}
+
+.initial-title{
+  background-color: #333;
+  opacity: 0.7;
+  font: message-box;
+  display: inline-flexbox;
+  position: absolute;
+  text-align: center;
+  bottom: -18px;
+  width: 37vh;
+
+  h1{
+    font-size: 16px;
+    // padding-top: 4px;
+  }
 }

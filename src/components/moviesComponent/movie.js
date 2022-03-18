@@ -59,7 +59,7 @@ const MoviePage = () => {
 
           <div className='date-search-container'>
             <div className='search-bar'>
-              <SearchBar placeholder={"Name"}/>
+              <SearchBar placeholder={"Name"} data={movieData}/>
             </div>
             <div className='date-container'>
               <DatePicker />
@@ -67,9 +67,10 @@ const MoviePage = () => {
         </div>
       </div>
 
-      <div className='container'>
+      {/* <div className='container'>
         <div className='movie-card-container' >
-          {movieData.map(movie =>
+
+          {movieData.map(movie => movie.programType === 'movie' &&
             <div className='movie-card'key={movie.title}>
                 <div className='movie-image-card' >
                   <img src={movie.images.PosterArt.url } alt="poster"/>
@@ -84,7 +85,7 @@ const MoviePage = () => {
             </div>
           )}
         </div>
-      </div>
+      </div> */}
 
 
     </div>
