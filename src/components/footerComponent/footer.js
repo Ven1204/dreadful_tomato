@@ -18,7 +18,7 @@ const Footer = () => {
         <h2>Manage Account</h2>
       </div>
       <div className='store'>
-        <img src={apple} alt="app store" />
+       <a href="https://www.apple.com/app-store/"><img src={apple} alt="app store" target="_blank" /></a>
         <img src={google} alt="google play" />
       </div>
       <div className='copyright'>

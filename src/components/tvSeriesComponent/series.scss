@@ -1,26 +1,109 @@
-.series-cards-container{
-  background-color: white;
-  height: 100vh;
-  width: 87%;
-  margin-left: 6%;
+.date-container{
+  width: 20%;
 }
-
-.series-card{
-  background-color: blue;
-  height: 50vh;
-  width: 40vh;
-  position: relative;
-  .series-card-image{
-    height: 100%;
-  }
-  .series-card-title{
-    position: absolute;
-    color: red;
-    top: 280px;
-  }
-}
-
-.search-bar-container{
-  background: red;
+.date-search-container{
+  background-color: red;
   height: 8vh;
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+  position: relative;
+  line-height: 8vh;
+
+}
+.date-container{
+  padding-right: 94px;
+  left: 155vh;
+  position: absolute;
+}
+
+.search-bar{
+  padding-left: 82px;
+}
+
+.movie-card-container{
+  cursor: pointer;
+  grid-template-columns: repeat(auto-fill, minmax(220px));
+  display: flex;
+  flex-flow: wrap;
+  padding-left: 81px;
+}
+
+.description-card{
+
+  text-align: center;
+  position: relative;
+
+  top: 135px;
+  width: 37vh;
+  height: 31vh;
+
+}
+
+.movie-image-card{
+  width: 41vh;
+  height: 55vh;
+  position: absolute;
+  img{
+    height: 55.5vh;
+  }
+}
+
+.movie-card{
+margin: 2px;
+height: 54vh;
+width: 36vh;
+}
+.movie-card:hover{
+  .card-info{
+    display: block;
+  }
+  .initial-title{
+    display: none;
+  }
+}
+
+.container{
+  width: 92%;
+}
+
+.card-info{
+  height: 32.2vh;
+  width: 37vh;
+  font: message-box;
+  display: none;
+  background-color: #333;
+  opacity: 0.7;
+
+  h1{
+    font-size: 16px;
+    padding-top: 4px;
+    opacity: 1;
+    padding: 8px;
+  }
+  h2{
+    font-size: 12px;
+    opacity: 1;
+  }
+  p{
+    font-size: 12px;
+    padding: 0px 12px;
+    opacity: 1;
+  }
+}
+
+.initial-title{
+  background-color: #333;
+  opacity: 0.7;
+  font: message-box;
+  display: inline-flexbox;
+  position: absolute;
+  text-align: center;
+  bottom: -18px;
+  width: 37vh;
+
+  h1{
+    font-size: 16px;
+    // padding-top: 4px;
+  }
 }
