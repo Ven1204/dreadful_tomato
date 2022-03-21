@@ -2,9 +2,8 @@ import React from 'react';
 import Header from '../headerComponent/header';
 import Footer from '../footerComponent/footer';
 import './home.scss';
-import movies from './movies.png';
-import series from './series.png';
-import MoviePage from '../moviesComponent/movie';
+import movies from '../../common/imagesAndIcons/movies.png';
+import series from '../../common/imagesAndIcons/series.png';
 import { Link } from 'react-router-dom';
 
 const Home = () => {

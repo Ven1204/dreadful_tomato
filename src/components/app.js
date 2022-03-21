@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes }  from  'react-router-dom';
 import MoviePage from './moviesComponent/movie';
 import SeriesPage from './tvSeriesComponent/series';
 import PageNotFound from './pageNotFoundComponent/pageNotFound';
-import axios from 'axios';
+
 
 const App = () => {
 

@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from '../headerComponent/logo.png';
-import apple from './app store.png';
-import google from './google-play.png';
+import logo from '../../common/imagesAndIcons/logo.png';
+import apple from '../../common/imagesAndIcons/app store.png';
+import google from '../../common/imagesAndIcons/google-play.png';
 import './footer.scss';
 
 const Footer = () => {

@@ -6,7 +6,9 @@ import { DatePicker } from '@progress/kendo-react-dateinputs';
 import '@progress/kendo-theme-default/dist/all.css';
 import api from '../../common/api/api';
 import SeriesSearchBar from '../searchBarComponent/seriesSearchBar';
-
+import { Link } from 'react-router-dom';
+import movieIcon from '../../common/imagesAndIcons/icon-movies.png';
+import seriesIcon from '../../common/imagesAndIcons/icon-series.png';
 const SeriesPage = () => {
   const [seriesData, setSeriesData] = useState([]);
 
@@ -39,7 +41,21 @@ const SeriesPage = () => {
       <div>
         <div>
           <HeaderSearch />
+          <Link to='/movies' >
+            <div  className="movie-icon2">
+              <img src={movieIcon} alt="movie-icon" />
+              <h2>Movies</h2>
+            </div>
+          </Link>
+
+          <Link to='/tv-series' id='series-id'>
+            <div className='series-icon2'>
+              <img src={seriesIcon} alt="series-icon" />
+              <h2>Series</h2>
+            </div>
+          </Link>
           </div>
+
           <div className='date-search-container'>
             <div className='search-bar'>
               <SeriesSearchBar

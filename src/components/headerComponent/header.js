@@ -1,7 +1,7 @@
 import React from 'react';
 import './header.scss';
-import logo from './logo.png';
-import login from './icon-login.png';
+import logo from '../../common/imagesAndIcons/logo.png';
+import login from '../../common/imagesAndIcons/icon-login.png';
 
 const Header = () => {
   return(
