@@ -18,17 +18,7 @@ const HeaderSearch= () => {
       </Link>
 
       <div className='container-log-btn'>
-        <h2>|</h2>
-          <div className='filter'>
-            <img src={filter} alt="filter" />
-            <h2>Filters</h2>
-          </div>
-        <h2>|</h2>
-          <div className='container-login'>
-            <h2> Login </h2>
-            <img src={login} alt="login icon" />
-          </div>
-        <h2>|</h2>
+
 
         <div className='container-btn'>
            <button className='btn-freeTrial'>Start your free trial</button>

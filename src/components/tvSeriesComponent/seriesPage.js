@@ -5,7 +5,7 @@ import Footer from '../footerComponent/footer';
 import { DatePicker } from '@progress/kendo-react-dateinputs';
 import '@progress/kendo-theme-default/dist/all.css';
 import api from '../../common/api/api';
-import SeriesSearchBar from '../tvSeriesComponent/seriesSearchBar';
+import SeriesSearchBar from './seriesSearchBar';
 import { Link } from 'react-router-dom';
 import movieIcon from '../../common/imagesAndIcons/icon-movies.png';
 import seriesIcon from '../../common/imagesAndIcons/icon-series.png';
@@ -71,30 +71,6 @@ const SeriesPage = () => {
 
        <div className='container'>
         <div className='movie-card-container' >
-
-          {/* {movieData.map(movie => movie.programType === 'series' &&
-            <div className='movie-card'key={movie.title}>
-
-                <div className='movie-image-card' >
-                  <img src={movie.images.PosterArt.url } alt="poster"/>
-                </div>
-                <div>
-
-                <div className='description-card'>
-                  <div className='initial-title'>
-                    <h1>{movie.title}</h1>
-                  </div>
-
-                  <div className='card-info'>
-                    <h1 >{movie.title}</h1>
-                    <h2>{movie.releaseYear}</h2>
-                    <p>{movie.description}</p>
-                  </div>
-                </div>
-
-                </div>
-            </div>
-          )} */}
         </div>
       </div>
 

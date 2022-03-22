@@ -1,82 +1,134 @@
 import React, { useState, useEffect } from 'react';
 import HeaderSearch from '../headerComponent/headerSearch';
+// import Header from '../headerComponent/header';
 import './moviePage.scss';
+import Footer from '../footerComponent/footer';
+import { DatePicker } from '@progress/kendo-react-dateinputs';
+import '@progress/kendo-theme-default/dist/all.css';
+import api from '../../common/api/api';
+import MovieSearchBar from './movieSearchBar';
+import { Link } from 'react-router-dom';
 import movieIcon from '../../common/imagesAndIcons/icon-movies.png';
 import seriesIcon from '../../common/imagesAndIcons/icon-series.png';
-import MovieSearchBar from './movieSearchBar';
-import Date from '../dateComponent/date';
-import api from '../../common/api/api';
-import { Link } from 'react-router-dom';
+import login from '../../common/imagesAndIcons/icon-login.png';
+import filter from '../../common/imagesAndIcons/icon-filter.png';
 
-function MoviePage() {
-  const [movies, setMovies] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [page, setPage] = useState(1);
-  // console.log(movies)
 
-  useEffect(() => {
+const MoviePage = () => {
+  const [movieData, setMovieData] = useState([]);
+  const [hideSearchBar, setHideSearchBar] = useState(false);
+  const [hideList, setHideList] = useState(true);
+
+  useEffect(() =>{
     const getApi = async () => {
-      const response = await api.get('/entries');
-      const isMovie = response.data
-      setMovies(isMovie);
-    };
+      try {
+        const response = await api.get('/entries');
+        const isMovie = response.data
+        setMovieData(isMovie);
+
+      } catch (err){
+        if(err.response){
+          console.log(err.response.data);
+          console.log(err.response.status);
+          console.log(err.response.headers);
+        } else {
+          console.log(`Error: ${err.message}`);
+        }
+      }
+    }
+
     getApi();
   }, [])
-  const handleFilter = (event) => {
-    event.preventDefault();
-    const searchWord = event.target.value
-    const newFilter = movies.filter((value) => {
-      return value.title.toLowerCase().includes(searchWord.toLowerCase());
-    });
-      setSearchTerm(newFilter);
+  const hideItems = () => {
+    setHideSearchBar(true);
+    setHideList(false);
   }
 
-
-
   return(
-
     <div>
-      <div>
-        <HeaderSearch />
-        <Link to='/movies' >
-          <div  className="movie-icon">
-            <img src={movieIcon} alt="movie-icon" />
-            <h2>Movies</h2>
-          </div>
-        </Link>
+        <div>
+          <HeaderSearch />
+          {/* <Header /> */}
+          <div className='icon-container'>
+            <Link to='/movies' >
+              <div  className="movie-icon">
+                <img src={movieIcon} alt="movie-icon" />
+                <h2>Movies</h2>
+              </div>
+            </Link>
 
-        <Link to='/tv-series' id='series-id'>
-          <div className='series-icon'>
-            <img src={seriesIcon} alt="series-icon" />
-            <h2>Series</h2>
+            <Link to='/tv-series' id='series-id'>
+              <div className='series-icon'>
+                <img src={seriesIcon} alt="series-icon" />
+                <h2>Series</h2>
+              </div>
+            </Link>
           </div>
-        </Link>
-      </div>
 
-          <header>
-            <form >
-            <input
-              className='movie-search'
-              type="text"
-              placeholder='Type to filter...'
-              value={searchTerm}
-              onChange={handleFilter}
-            />
-            </form>
-          </header>
-        <div className='movie-card-container'>
-          {movies.length > 0 &&
-          movies.map((movie) => movie.programType === 'movie' &&
-          <MovieSearchBar
-            key={movie.title}
-            {...movie}
-            page = {page}
-          />)
-          }
+          <div className='filter-container'>
+            <h2>|</h2>
+            <div className='filter' onClick={hideItems}>
+              <img src={filter} alt="filter" />
+              <h2>Filters</h2>
+            </div>
+            <h2>|</h2>
+            <div className='container-login'>
+              <h2> Login </h2>
+              <img src={login} alt="login icon" />
+            </div>
+            <h2>|</h2>
+          </div>
         </div>
 
 
+        <div className='date-search-container'>
+        {hideSearchBar?
+        <div>
+          <div className='search-bar'>
+            <MovieSearchBar
+              placeholder={"Type to filter..."}
+              data={movieData}
+            />
+          </div>
 
+          <div className='date-container'>
+            <DatePicker />
+          </div>
+        </div>
+        : null}
+        </div>
+
+
+      {hideList?
+       <div className='container-search1'>
+        {movieData && (
+        <div className='movie-search-card-container' >
+          {movieData.map((movie,key) => movie.programType === 'movie' &&
+            <div className='movie-search-card'key={movie.title}>
+
+              <div className='movie-search-image-card' >
+                <img src={movie.images.PosterArt.url } alt="poster"/>
+              </div>
+              <div>
+                <div className='description-search-card'>
+                  <div className='initial-search-title'>
+                    <h1>{movie.title}</h1>
+                  </div>
+
+                  <div className='card-search-info'>
+                    <h1 >{movie.title}</h1>
+                    <h2>{movie.releaseYear}</h2>
+                    <p>{movie.description}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+
+        )}
+      </div>
+      : null}
 
     </div>
   )

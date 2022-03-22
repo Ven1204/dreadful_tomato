@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import './movieSearchBar.scss';
 import SearchIcon from '@mui/icons-material/Search';
-import { MOVIE_PER_PAGE } from '../../utils/constants'
-import MovieData from './movieData';
 
-const MovieSearchBar = ({data,title, description, releaseYear, images, page}) => {
-  const startIndex = (page -1) * MOVIE_PER_PAGE
-  const [filteredData, setFilteredData] = useState("");
-  // const selectedMovies = data.slice(startIndex, startIndex + MOVIE_PER_PAGE);
+
+
+const MovieSearchBar = ({placeholder, data}) => {
+  const [filteredData, setFilteredData] = useState(data);
+  const [showProps, setShowProps] = useState(true);
+
   const handleFilter = (event) => {
     event.preventDefault();
     const searchWord = event.target.value
@@ -15,18 +15,51 @@ const MovieSearchBar = ({data,title, description, releaseYear, images, page}) =>
       return value.title.toLowerCase().includes(searchWord.toLowerCase());
     });
       setFilteredData(newFilter);
+      setShowProps(false);
   }
 
   return(
-    <div className='movie-card'>
-      <img src={images.PosterArt.url}alt={title}/>
-      <div className='movie-title'>
-        <h2>{title}</h2>
+    <div className='search'>
+      <div className='search-input'>
+        <div className='search-icon'><SearchIcon /></div>
+        <input
+          type="text"
+          placeholder={placeholder}
+          onChange={handleFilter}
+        />
       </div>
-      <div className='movie-card-info'>
-        <h2>{title}</h2>
-        <h3>{releaseYear}</h3>
-        <p>{description}</p>
+
+      {/* <div className='props'>
+        {showProps && <h1>Search to show movie lists</h1>}
+      </div> */}
+
+      <div className='container-search'>
+        {filteredData && (
+        <div className='movie-search-card-container' >
+          {filteredData.map((movie,key) => movie.programType === 'movie' &&
+            <div className='movie-search-card'key={movie.title}>
+
+              <div className='movie-search-image-card' >
+                <img src={movie.images.PosterArt.url } alt="poster"/>
+              </div>
+              <div>
+                <div className='description-search-card'>
+                  <div className='initial-search-title'>
+                    <h1>{movie.title}</h1>
+                  </div>
+
+                  <div className='card-search-info'>
+                    <h1 >{movie.title}</h1>
+                    <h2>{movie.releaseYear}</h2>
+                    <p>{movie.description}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+
+        )}
       </div>
     </div>
   );

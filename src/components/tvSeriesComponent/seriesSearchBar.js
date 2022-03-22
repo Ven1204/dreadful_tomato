@@ -5,8 +5,8 @@ import SearchIcon from '@mui/icons-material/Search';
 
 
 const SeriesSearchBar = ({placeholder, data}) => {
-  const [filteredData, setFilteredData] = useState("");
-
+  const [filteredData, setFilteredData] = useState(data);
+  const [showProps, setShowProps] = useState(true);
   const handleFilter = (event) => {
     event.preventDefault();
     const searchWord = event.target.value
@@ -14,19 +14,28 @@ const SeriesSearchBar = ({placeholder, data}) => {
       return value.title.toLowerCase().includes(searchWord.toLowerCase());
     });
       setFilteredData(newFilter);
+      setShowProps(false);
   }
 
   return(
     <div className='search'>
-      {/* <div className='search-input'>
+      <div className='search-input'>
         <div className='search-icon'><SearchIcon /></div>
-        <input type="text" placeholder={placeholder} onChange={handleFilter}/>
-      </div> */}
+        <input
+          type="text"
+          placeholder={placeholder}
+          onChange={handleFilter}
+        />
+      </div>
+
+      <div className='props'>
+        {showProps && <h1>Search to show movie lists</h1>}
+      </div>
 
        <div className='container-search'>
        {filteredData && (
         <div className='movie-search-card-container' >
-          {data.map((movie,key) => movie.programType === 'series' &&
+          {filteredData.map((movie,key) => movie.programType === 'series' &&
             <div className='movie-search-card'key={movie.title}>
 
               <div className='movie-search-image-card' >

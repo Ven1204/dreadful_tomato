@@ -5,8 +5,7 @@
   background-color: red;
   padding-left: 8px;
   text-decoration: none;
-  position: absolute;
-  right: 120vh;
+
   // opacity: 0.7;
   h2{
     font-size: 16px;
@@ -31,8 +30,7 @@
   // background-color: red;
   padding-left: 8px;
   text-decoration: none;
-  position: absolute;
-  right: 104vh;
+
   opacity: 0.7;
   h2{
     font-size: 16px;
@@ -52,5 +50,55 @@
 .movie-card-container{
   display: flex;
   flex-wrap: wrap;
+}
 
+.filter-container{
+  display: flex;
+  position: absolute;
+  top: 8px;
+  right: 355px;
+}
+
+.filter {
+  cursor: pointer;
+  font-size: 16px;
+  display: inline-flex;
+  line-height: 4pc;
+  padding-left: 8px;
+  background: grey;
+  opacity: .9;
+  h2{
+    font-size: 16px;
+    padding: 0px 8px;
+    opacity: 0.7;
+    color: aliceblue;
+    line-height: 40px;
+  }
+  img{
+    height: 16px;
+    opacity: 0.7;
+    padding-top: 24px;
+  }
+  :hover{
+    h2{
+      opacity: 1;
+    }
+    img{
+      opacity: 1;
+    }
+  }
+}
+.filter :focus{
+  background: transparent;
+}
+
+.icon-container{
+  position: absolute;
+  top: 8px;
+  left: 500px;
+}
+.container-search1{
+  position: absolute;
+  top: 124px;
+  left: 14.3vh;
 }
