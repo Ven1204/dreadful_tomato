@@ -17,14 +17,14 @@ const HeaderSearch= () => {
         </div>
       </Link>
 
-      <div className='container-log-btn'>
+      {/* <div className='container-log-btn'> */}
 
 
         <div className='container-btn'>
            <button className='btn-freeTrial'>Start your free trial</button>
         </div>
 
-      </div>
+      {/* </div> */}
     </div>
   );
 }

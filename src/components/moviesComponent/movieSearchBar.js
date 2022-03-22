@@ -29,10 +29,6 @@ const MovieSearchBar = ({placeholder, data}) => {
         />
       </div>
 
-      {/* <div className='props'>
-        {showProps && <h1>Search to show movie lists</h1>}
-      </div> */}
-
       <div className='container-search'>
         {filteredData && (
         <div className='movie-search-card-container' >
@@ -58,9 +54,9 @@ const MovieSearchBar = ({placeholder, data}) => {
             </div>
           )}
         </div>
-
         )}
       </div>
+
     </div>
   );
 }

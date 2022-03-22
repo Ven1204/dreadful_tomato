@@ -3,7 +3,7 @@ import HeaderSearch from '../headerComponent/headerSearch';
 // import Header from '../headerComponent/header';
 import './moviePage.scss';
 import Footer from '../footerComponent/footer';
-import { DatePicker } from '@progress/kendo-react-dateinputs';
+import Date from '../dateComponent/date';
 import '@progress/kendo-theme-default/dist/all.css';
 import api from '../../common/api/api';
 import MovieSearchBar from './movieSearchBar';
@@ -18,6 +18,7 @@ const MoviePage = () => {
   const [movieData, setMovieData] = useState([]);
   const [hideSearchBar, setHideSearchBar] = useState(false);
   const [hideList, setHideList] = useState(true);
+  const [btnClr, setBtnClr] = useState('transparent');
 
   useEffect(() =>{
     const getApi = async () => {
@@ -42,6 +43,7 @@ const MoviePage = () => {
   const hideItems = () => {
     setHideSearchBar(true);
     setHideList(false);
+    setBtnClr('grey');
   }
 
   return(
@@ -83,19 +85,24 @@ const MoviePage = () => {
 
         <div className='date-search-container'>
         {hideSearchBar?
-        <div>
-          <div className='search-bar'>
-            <MovieSearchBar
-              placeholder={"Type to filter..."}
-              data={movieData}
-            />
-          </div>
+        <>
+          <div>
+            <div className='search-bar'>
+              <MovieSearchBar
+                placeholder={"Type to filter..."}
+                data={movieData}
+              />
+            </div>
 
-          <div className='date-container'>
-            <DatePicker />
           </div>
-        </div>
+            <div className='date-container'>
+              <Date
+                data={movieData}
+              />
+            </div>
+        </>
         : null}
+
         </div>
 
 
