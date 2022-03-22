@@ -1,8 +1,8 @@
 import React from 'react';
 import Home from './landingComponent/home';
 import { BrowserRouter as Router, Route, Routes }  from  'react-router-dom';
-import MoviePage from './moviesComponent/movie';
-import SeriesPage from './tvSeriesComponent/series';
+import MoviePage from './moviesComponent/moviePage';
+import SeriesPage from './tvSeriesComponent/seriesPage';
 import PageNotFound from './pageNotFoundComponent/pageNotFound';
 
 

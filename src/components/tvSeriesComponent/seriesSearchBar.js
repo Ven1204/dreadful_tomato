@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import './seriesSearchBar.scss';
 import SearchIcon from '@mui/icons-material/Search';
-import '../moviesComponent/movie.scss';
+
 
 
 const SeriesSearchBar = ({placeholder, data}) => {
-  const [filteredData, setFilteredData] = useState(data);
+  const [filteredData, setFilteredData] = useState("");
 
   const handleFilter = (event) => {
     event.preventDefault();
@@ -18,15 +18,15 @@ const SeriesSearchBar = ({placeholder, data}) => {
 
   return(
     <div className='search'>
-      <div className='search-input'>
+      {/* <div className='search-input'>
         <div className='search-icon'><SearchIcon /></div>
         <input type="text" placeholder={placeholder} onChange={handleFilter}/>
-      </div>
+      </div> */}
 
        <div className='container-search'>
        {filteredData && (
         <div className='movie-search-card-container' >
-          {filteredData.map((movie,key) => movie.programType === 'series' &&
+          {data.map((movie,key) => movie.programType === 'series' &&
             <div className='movie-search-card'key={movie.title}>
 
               <div className='movie-search-image-card' >

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import HeaderSearch from '../headerComponent/headerSearch';
-import './series.scss';
+import './seriesPage.scss';
 import Footer from '../footerComponent/footer';
 import { DatePicker } from '@progress/kendo-react-dateinputs';
 import '@progress/kendo-theme-default/dist/all.css';
 import api from '../../common/api/api';
-import SeriesSearchBar from '../searchBarComponent/seriesSearchBar';
+import SeriesSearchBar from '../tvSeriesComponent/seriesSearchBar';
 import { Link } from 'react-router-dom';
 import movieIcon from '../../common/imagesAndIcons/icon-movies.png';
 import seriesIcon from '../../common/imagesAndIcons/icon-series.png';
