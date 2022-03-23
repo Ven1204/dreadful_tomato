@@ -5,11 +5,18 @@ import './date.scss';
 
 function DateComponent({data}) {
   const [selectedDate, setSelectedDate] = useState(null);
-  const  [dateFilter, setDateFilter] = useState([])
+  const  [dateFilter, setDateFilter] = useState([]);
+  const x = JSON.stringify(selectedDate);
+  console.log(selectedDate)
+  const y = x.split("");
+  const z = y.slice(1,5);
+  const  a = z.join('');
+  console.log(a)
+
 
   const handleDateFilter = () => {
     const newFilter = data.filter((value) => {
-      return value.releaseYear === 2019;
+      return value.releaseYear === parseInt(a);
     });
       setDateFilter(newFilter);
       console.log(newFilter)
@@ -23,6 +30,7 @@ function DateComponent({data}) {
           placeholderText="Filter by date"
           className='date-picker'
           onChange={date => setSelectedDate(date)}
+
           onSelect={handleDateFilter}
           selected={selectedDate}
           dateFormat='yyyy'
@@ -32,7 +40,7 @@ function DateComponent({data}) {
       </div>
 
 
-      <div className='container-search'>
+      <div className='asd'>
         {dateFilter && (
         <div className='movie-search-card-container' >
           {dateFilter.map((movie,key) => movie.programType === 'movie' &&

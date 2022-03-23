@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import HeaderSearch from '../headerComponent/headerSearch';
 import './seriesPage.scss';
 import Footer from '../footerComponent/footer';
-import { DatePicker } from '@progress/kendo-react-dateinputs';
 import '@progress/kendo-theme-default/dist/all.css';
 import api from '../../common/api/api';
 import SeriesSearchBar from './seriesSearchBar';
@@ -65,9 +64,9 @@ const SeriesPage = () => {
               />
             </div>
             <div className='date-container'>
-              <DatePicker
 
-              />
+
+
             </div>
         </div>
 
