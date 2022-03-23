@@ -65,7 +65,9 @@ const SeriesPage = () => {
               />
             </div>
             <div className='date-container'>
-              <DatePicker />
+              <DatePicker
+
+              />
             </div>
         </div>
 

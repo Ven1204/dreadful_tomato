@@ -3,7 +3,7 @@ import HeaderSearch from '../headerComponent/headerSearch';
 // import Header from '../headerComponent/header';
 import './moviePage.scss';
 import Footer from '../footerComponent/footer';
-import Date from '../dateComponent/date';
+import DateComponent from '../dateComponent/date';
 import '@progress/kendo-theme-default/dist/all.css';
 import api from '../../common/api/api';
 import MovieSearchBar from './movieSearchBar';
@@ -45,6 +45,7 @@ const MoviePage = () => {
     setHideList(false);
     setBtnClr('grey');
   }
+
 
   return(
     <div>
@@ -96,7 +97,7 @@ const MoviePage = () => {
 
           </div>
             <div className='date-container'>
-              <Date
+              <DateComponent
                 data={movieData}
               />
             </div>
@@ -106,7 +107,7 @@ const MoviePage = () => {
         </div>
 
 
-      {hideList?
+      {/* {hideList?
        <div className='container-search1'>
         {movieData && (
         <div className='movie-search-card-container' >
@@ -135,7 +136,7 @@ const MoviePage = () => {
 
         )}
       </div>
-      : null}
+      : null} */}
 
     </div>
   )

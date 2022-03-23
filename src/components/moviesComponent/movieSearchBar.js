@@ -18,6 +18,7 @@ const MovieSearchBar = ({placeholder, data}) => {
       setShowProps(false);
   }
 
+
   return(
     <div className='search'>
       <div className='search-input'>
@@ -28,7 +29,7 @@ const MovieSearchBar = ({placeholder, data}) => {
           onChange={handleFilter}
         />
       </div>
-
+{/*
       <div className='container-search'>
         {filteredData && (
         <div className='movie-search-card-container' >
@@ -55,7 +56,7 @@ const MovieSearchBar = ({placeholder, data}) => {
           )}
         </div>
         )}
-      </div>
+      </div> */}
 
     </div>
   );
