@@ -105,9 +105,11 @@ const MoviePage = () => {
         : null}
 
         </div>
+        <div className='movie-header'>
+          <h1>Popular Movies</h1>
+        </div>
 
-
-      {/* {hideList?
+      {hideList?
        <div className='container-search1'>
         {movieData && (
         <div className='movie-search-card-container' >
@@ -136,7 +138,7 @@ const MoviePage = () => {
 
         )}
       </div>
-      : null} */}
+      : null}
 
     </div>
   )

@@ -59,6 +59,8 @@
   grid-template-columns: repeat(auto-fill, minmax(220px));
   display: flex;
   flex-flow: wrap;
+  top: 12vh;
+  position: relative;
 }
 
 .description-search-card{

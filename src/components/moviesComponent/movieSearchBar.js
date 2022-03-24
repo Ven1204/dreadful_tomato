@@ -30,7 +30,7 @@ const MovieSearchBar = ({placeholder, data}) => {
         />
       </div>
 
-      {/* <div className='container-search'>
+      <div className='container-search'>
         {filteredData && (
         <div className='movie-search-card-container' >
           {filteredData.map((movie,key) => movie.programType === 'movie' &&
@@ -56,7 +56,7 @@ const MovieSearchBar = ({placeholder, data}) => {
           )}
         </div>
         )}
-      </div> */}
+      </div>
 
     </div>
   );
