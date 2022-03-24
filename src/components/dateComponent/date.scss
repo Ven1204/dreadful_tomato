@@ -34,9 +34,12 @@
 .asd{
     color: #f5f5f5;
     display: flex;
-    width: 184vh;
+    width: 214.5vh;
     left: 14.5vh;
     right: 25vh;
     flex-flow: wrap;
-    position: fixed;
+    position: absolute;
+    left: auto;
+    right: 11vh;
+
 }

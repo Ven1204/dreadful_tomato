@@ -6,17 +6,19 @@ import './date.scss';
 function DateComponent({data}) {
   const [selectedDate, setSelectedDate] = useState(null);
   const  [dateFilter, setDateFilter] = useState([]);
+
   const x = JSON.stringify(selectedDate);
-  console.log(selectedDate)
+  // console.log(selectedDate)
   const y = x.split("");
   const z = y.slice(1,5);
   const  a = z.join('');
-  console.log(a)
+    const yr = parseInt(a);
+    console.log(yr)
 
 
   const handleDateFilter = () => {
     const newFilter = data.filter((value) => {
-      return value.releaseYear === parseInt(a);
+      return value.releaseYear === yr
     });
       setDateFilter(newFilter);
       console.log(newFilter)
