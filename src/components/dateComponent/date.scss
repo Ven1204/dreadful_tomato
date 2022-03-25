@@ -31,7 +31,7 @@
 .react-datepicker__year--container {
   font-family: monospace;
 }
-.asd{
+.date-movie-container{
     color: #f5f5f5;
     display: flex;
     width: 214.5vh;
@@ -43,3 +43,27 @@
     right: 11vh;
 
 }
+
+.movie-date-card-container{
+  cursor: pointer;
+  grid-template-columns: repeat(auto-fill, minmax(220px));
+  display: flex;
+  flex-flow: wrap;
+  top: 12vh;
+  position: relative;
+  left: 26vh;
+}
+
+// .movie-date-card{
+
+// }
+
+// .movie-date-image-card{
+
+// }
+
+// .description-date-card{
+
+// }
+
+// initial

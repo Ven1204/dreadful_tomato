@@ -18,7 +18,7 @@ const MoviePage = () => {
   const [movieData, setMovieData] = useState([]);
   const [hideSearchBar, setHideSearchBar] = useState(false);
   const [hideList, setHideList] = useState(true);
-  const [btnClr, setBtnClr] = useState('transparent');
+
 
   useEffect(() =>{
     const getApi = async () => {
@@ -43,7 +43,7 @@ const MoviePage = () => {
   const hideItems = () => {
     setHideSearchBar(true);
     setHideList(false);
-    setBtnClr('grey');
+
   }
 
 
@@ -51,7 +51,6 @@ const MoviePage = () => {
     <div>
         <div>
           <HeaderSearch />
-          {/* <Header /> */}
           <div className='icon-container'>
             <Link to='/movies' >
               <div  className="movie-icon">
@@ -96,9 +95,10 @@ const MoviePage = () => {
             </div>
 
           </div>
-            <div className='date-container'>
+            <div className='date-container' onClick={hideItems}>
               <DateComponent
                 data={movieData}
+
               />
             </div>
         </>

@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import './movieSearchBar.scss';
 import SearchIcon from '@mui/icons-material/Search';
-
-
+import DateComponent from '../dateComponent/date';
 
 const MovieSearchBar = ({placeholder, data}) => {
   const [filteredData, setFilteredData] = useState(data);
-  const [showProps, setShowProps] = useState(true);
+
 
   const handleFilter = (event) => {
     event.preventDefault();
@@ -15,8 +14,9 @@ const MovieSearchBar = ({placeholder, data}) => {
       return value.title.toLowerCase().includes(searchWord.toLowerCase());
     });
       setFilteredData(newFilter);
-      setShowProps(false);
   }
+
+
 
 
   return(
@@ -29,6 +29,8 @@ const MovieSearchBar = ({placeholder, data}) => {
           onChange={handleFilter}
         />
       </div>
+
+
 
       <div className='container-search'>
         {filteredData && (
@@ -57,6 +59,7 @@ const MovieSearchBar = ({placeholder, data}) => {
         </div>
         )}
       </div>
+
 
     </div>
   );
