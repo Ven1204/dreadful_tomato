@@ -4,6 +4,10 @@ import logo from '../../common/imagesAndIcons/logo.png';
 import login from '../../common/imagesAndIcons/icon-login.png';
 
 const Header = () => {
+  const handleAlert = () => {
+    alert("We are still working on this function... thankyou for your support ")
+  }
+
   return(
     <div className='container-header'>
       <div className='logo'>
@@ -12,12 +16,12 @@ const Header = () => {
       <div className='container-log-btn'>
         <div className='container-login'>
           <h2>|</h2>
-          <h2> Login </h2>
+          <h2 onClick={handleAlert}> Login </h2>
           <img src={login} alt="login icon" />
           <h2>|</h2>
         </div>
         <div className='container-btn'>
-           <button className='btn-freeTrial'>Start your free trial</button>
+           <button className='btn-freeTrial' onClick={handleAlert}>Start your free trial</button>
         </div>
 
       </div>
