@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import './movieSearchBar.scss';
 import SearchIcon from '@mui/icons-material/Search';
-import DateComponent from '../dateComponent/date';
-import Movie from './movie';
+
 
 const MovieSearchBar = ({placeholder, data}) => {
   const [filteredData, setFilteredData] = useState(data);
-
 
   const handleFilter = (event) => {
     event.preventDefault();
@@ -16,9 +14,6 @@ const MovieSearchBar = ({placeholder, data}) => {
     });
       setFilteredData(newFilter);
   }
-
-
-
 
   return(
     <div className='search'>
@@ -30,8 +25,6 @@ const MovieSearchBar = ({placeholder, data}) => {
           onChange={handleFilter}
         />
       </div>
-
-
 
       <div className='container-search'>
         {filteredData && (
@@ -60,10 +53,7 @@ const MovieSearchBar = ({placeholder, data}) => {
           )}
         </div>
         )}
-        {/* <Movie /> */}
       </div>
-
-
     </div>
   );
 }

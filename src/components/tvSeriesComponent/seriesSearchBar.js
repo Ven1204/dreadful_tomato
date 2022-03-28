@@ -3,10 +3,9 @@ import './seriesSearchBar.scss';
 import SearchIcon from '@mui/icons-material/Search';
 
 
-
 const SeriesSearchBar = ({placeholder, data}) => {
   const [filteredData, setFilteredData] = useState(data);
-  const [showProps, setShowProps] = useState(true);
+
   const handleFilter = (event) => {
     event.preventDefault();
     const searchWord = event.target.value
@@ -14,7 +13,6 @@ const SeriesSearchBar = ({placeholder, data}) => {
       return value.title.toLowerCase().includes(searchWord.toLowerCase());
     });
       setFilteredData(newFilter);
-      setShowProps(false);
   }
 
   return(
@@ -28,37 +26,33 @@ const SeriesSearchBar = ({placeholder, data}) => {
         />
       </div>
 
-      <div className='props'>
-        {showProps && <h1>Search to show movie lists</h1>}
-      </div>
+      <div className='container-search'>
+        {filteredData && (
+        <div className='series-search-card-container' >
+          {filteredData.map((series,key) => (
+            <div className='series-search-card'key={series.title}>
 
-       <div className='container-search'>
-       {filteredData && (
-        <div className='movie-search-card-container' >
-          {filteredData.map((movie,key) => movie.programType === 'series' &&
-            <div className='movie-search-card'key={movie.title}>
-
-              <div className='movie-search-image-card' >
-                <img src={movie.images.PosterArt.url } alt="poster"/>
+              <div className='series-search-image-card' >
+                <img src={series.images.PosterArt.url } alt="poster"/>
               </div>
               <div>
                 <div className='description-search-card'>
                   <div className='initial-search-title'>
-                    <h1>{movie.title}</h1>
+                    <h1>{series.title}</h1>
                   </div>
 
                   <div className='card-search-info'>
-                    <h1 >{movie.title}</h1>
-                    <h2>{movie.releaseYear}</h2>
-                    <p>{movie.description}</p>
+                    <h1 >{series.title}</h1>
+                    <h2>{series.releaseYear}</h2>
+                    <p>{series.description}</p>
                   </div>
                 </div>
               </div>
             </div>
+            )
           )}
         </div>
-
-       )}
+        )}
       </div>
     </div>
   );

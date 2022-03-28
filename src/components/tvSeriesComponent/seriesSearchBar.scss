@@ -54,11 +54,13 @@
 }
 
 
-.movie-search-card-container{
+.series-search-card-container{
   cursor: pointer;
   grid-template-columns: repeat(auto-fill, minmax(220px));
   display: flex;
   flex-flow: wrap;
+  top: 12vh;
+  position: relative;
 }
 
 .description-search-card{
@@ -72,7 +74,7 @@
 
 }
 
-.movie-search-image-card{
+.series-search-image-card{
   width: 41vh;
   height: 55vh;
   position: absolute;
@@ -81,12 +83,13 @@
   }
 }
 
-.movie-search-card{
+.series-search-card{
 margin: 2px;
 height: 54vh;
 width: 36vh;
+cursor: auto;
 }
-.movie-search-card:hover{
+.series-search-card:hover{
   .card-search-info{
     display: block;
     transition: 0.5s ease-in-out;
@@ -109,6 +112,7 @@ width: 36vh;
   background-color: #333;
   opacity: 0.7;
 
+
   h1{
     font-size: 16px;
     padding-top: 4px;
@@ -121,7 +125,7 @@ width: 36vh;
   }
   p{
     font-size: 12px;
-    padding: 0px 12px;
+    padding: 0px 20px;
     opacity: 1;
   }
 }
@@ -140,4 +144,14 @@ width: 36vh;
     font-size: 16px;
     // padding-top: 4px;
   }
+}
+
+.search-input:active{
+  .props h1{
+    display: none;
+  }
+}
+
+.props {
+  position: relative;
 }

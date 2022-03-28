@@ -3,14 +3,6 @@ import { MOVIE_PER_PAGE } from '../../utils/constants';
 
 function Movie ({data, page}) {
 
-  // const movieList = [];
-  // const x = data.map(movie =>{
-  //   if(movie.programType === 'movie'){
-  //     movieList.push(movie)
-  //   }
-  // })
-  //   // console.log(movieList);
-
   const startIndex = (page - 1) * MOVIE_PER_PAGE;
   const selectedMovie = data.slice(startIndex, startIndex + MOVIE_PER_PAGE);
 

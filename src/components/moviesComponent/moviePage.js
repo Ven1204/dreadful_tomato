@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import HeaderSearch from '../headerComponent/headerSearch';
-// import Header from '../headerComponent/header';
 import './moviePage.scss';
 import Footer from '../footerComponent/footer';
 import DateComponent from '../dateComponent/date';
-import '@progress/kendo-theme-default/dist/all.css';
 import api from '../../common/api/api';
 import MovieSearchBar from './movieSearchBar';
 import { Link } from 'react-router-dom';
@@ -24,7 +22,7 @@ const MoviePage = () => {
   // pagination
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
-  console.log(totalPages)
+
   useEffect(() =>{
     const getApi = async () => {
       try {
@@ -50,16 +48,15 @@ const MoviePage = () => {
         }
       }
     }
-
     getApi();
   }, [])
+
   const hideItems = () => {
     setHideSearchBar(true);
     setHideList(false);
-
-
   }
-  const handleClick = num  =>{
+
+  const handleClick = num  => {
     setPage(num);
   }
 
@@ -126,7 +123,7 @@ const MoviePage = () => {
         </div>
 
       {hideList?
-      <div>
+      <div className="cont">
         <Movie
           data={movieData}
           page={page}
@@ -137,9 +134,11 @@ const MoviePage = () => {
         />
       </div>
       : null}
-
-
-
+      {hideList?
+      <div className='footer-ctn'>
+        <Footer/>
+      </div>
+      : null}
     </div>
   )
 }
