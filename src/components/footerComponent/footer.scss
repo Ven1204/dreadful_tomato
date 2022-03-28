@@ -12,12 +12,15 @@
 
 .links {
   display: inline-flex;
+
   h2{
     font-weight: 200;
     font-size: 16px;
     margin: 8px 10px;
     cursor: pointer;
     opacity: 0.7;
+    text-decoration: none;
+    color: azure;
   }
   h2:hover{
     font-weight: 400;
