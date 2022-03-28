@@ -4,7 +4,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import './date.scss';
 
 function initialDate (){
-  return null
+  return 0
 }
 
 function DateComponent({data}) {
@@ -17,11 +17,9 @@ function DateComponent({data}) {
 
   const x = JSON.stringify(selectedDate);
   // console.log(selectedDate)
-  const y = x.split("");
-  const z = y.slice(1,5);
-  const  a = z.join('');
-  let yr = parseInt(a);
-    yr += 1
+  const yr = x.split("").slice(1,5).join('');
+  let year = parseInt(yr);
+    year += 1
     console.log(yr)
 
   const handleDateFilter = () => {

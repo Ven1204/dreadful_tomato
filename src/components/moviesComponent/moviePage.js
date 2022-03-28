@@ -12,20 +12,33 @@ import movieIcon from '../../common/imagesAndIcons/icon-movies.png';
 import seriesIcon from '../../common/imagesAndIcons/icon-series.png';
 import login from '../../common/imagesAndIcons/icon-login.png';
 import filter from '../../common/imagesAndIcons/icon-filter.png';
-
+import Movie from './movie';
+import Pagination from '../pagination/pagination';
+import { MOVIE_PER_PAGE } from '../../utils/constants';
 
 const MoviePage = () => {
   const [movieData, setMovieData] = useState([]);
   const [hideSearchBar, setHideSearchBar] = useState(false);
   const [hideList, setHideList] = useState(true);
 
-
+  // pagination
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
+  console.log(totalPages)
   useEffect(() =>{
     const getApi = async () => {
       try {
         const response = await api.get('/entries');
         const isMovie = response.data
-        setMovieData(isMovie);
+
+          const movieList = [];
+          const x = isMovie.map(movie =>{
+            if(movie.programType === 'movie'){
+              movieList.push(movie)
+            }
+          })
+        setMovieData(movieList);
+        setTotalPages(Math.ceil(movieList.length / MOVIE_PER_PAGE));
 
       } catch (err){
         if(err.response){
@@ -44,8 +57,11 @@ const MoviePage = () => {
     setHideSearchBar(true);
     setHideList(false);
 
-  }
 
+  }
+  const handleClick = num  =>{
+    setPage(num);
+  }
 
   return(
     <div>
@@ -110,35 +126,19 @@ const MoviePage = () => {
         </div>
 
       {hideList?
-       <div className='container-search1'>
-        {movieData && (
-        <div className='movie-search-card-container' >
-          {movieData.map((movie,key) => movie.programType === 'movie' &&
-            <div className='movie-search-card'key={movie.title}>
-
-              <div className='movie-search-image-card' >
-                <img src={movie.images.PosterArt.url } alt="poster"/>
-              </div>
-              <div>
-                <div className='description-search-card'>
-                  <div className='initial-search-title'>
-                    <h1>{movie.title}</h1>
-                  </div>
-
-                  <div className='card-search-info'>
-                    <h1 >{movie.title}</h1>
-                    <h2>{movie.releaseYear}</h2>
-                    <p>{movie.description}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-
-        )}
+      <div>
+        <Movie
+          data={movieData}
+          page={page}
+        />
+        < Pagination
+          totalPages={totalPages}
+          handleClick={handleClick}
+        />
       </div>
       : null}
+
+
 
     </div>
   )

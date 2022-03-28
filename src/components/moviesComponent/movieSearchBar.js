@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './movieSearchBar.scss';
 import SearchIcon from '@mui/icons-material/Search';
 import DateComponent from '../dateComponent/date';
+import Movie from './movie';
 
 const MovieSearchBar = ({placeholder, data}) => {
   const [filteredData, setFilteredData] = useState(data);
@@ -35,7 +36,7 @@ const MovieSearchBar = ({placeholder, data}) => {
       <div className='container-search'>
         {filteredData && (
         <div className='movie-search-card-container' >
-          {filteredData.map((movie,key) => movie.programType === 'movie' &&
+          {filteredData.map((movie,key) => (
             <div className='movie-search-card'key={movie.title}>
 
               <div className='movie-search-image-card' >
@@ -55,9 +56,11 @@ const MovieSearchBar = ({placeholder, data}) => {
                 </div>
               </div>
             </div>
+            )
           )}
         </div>
         )}
+        {/* <Movie /> */}
       </div>
 
 
